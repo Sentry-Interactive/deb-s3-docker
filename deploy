@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [[ $# -eq 0 ]] ; then
+    echo "Version argument missing"
+    exit 1
+fi
+
+VERSION=$1
+
+docker build --build-arg VERSION=$VERSION . \
+    -t ghcr.io/sentry-interactive/deb-s3:$VERSION \
+    -t ghcr.io/sentry-interactive/deb-s3:latest
+docker push ghcr.io/sentry-interactive/deb-s3:$VERSION
+docker push ghcr.io/sentry-interactive/deb-s3:latest
