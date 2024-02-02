@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
-    curl -sLO https://github.com/deb-s3/deb-s3/releases/download/$VERSION/deb-s3-0.11.4.gem && \
+    curl -sLO https://github.com/deb-s3/deb-s3/releases/download/$VERSION/deb-s3-$VERSION.gem && \
     gem install deb-s3-$VERSION.gem && \
     rm deb-s3-$VERSION.gem
 
